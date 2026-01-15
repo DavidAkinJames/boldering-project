@@ -1,5 +1,7 @@
 /* 1. Use a more-intuitive box-sizing model */
-*, *::before, *::after {
+*,
+*::before,
+*::after {
   box-sizing: border-box;
 }
 
@@ -23,18 +25,31 @@ body {
 }
 
 /* 6. Improve media defaults */
-img, picture, video, canvas, svg {
+img,
+picture,
+video,
+canvas,
+svg {
   display: block;
   max-width: 100%;
 }
 
 /* 7. Inherit fonts for form controls */
-input, button, textarea, select {
+input,
+button,
+textarea,
+select {
   font: inherit;
 }
 
 /* 8. Avoid text overflows */
-p, h1, h2, h3, h4, h5, h6 {
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   overflow-wrap: break-word;
 }
 
@@ -42,13 +57,242 @@ p, h1, h2, h3, h4, h5, h6 {
 p {
   text-wrap: pretty;
 }
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   text-wrap: balance;
 }
 
 /*
   10. Create a root stacking context
 */
-#root, #__next {
+#root,
+#__next {
   isolation: isolate;
+}
+
+:root {
+  /* Color Palette */
+  --color-dark-text: #323842;
+  --color-light-text: #535c6a;
+  --color-teal: #007c9d; /* The bright teal for "Bouldering" */
+  --color-teal-dark: #0e6e8c; /* The footer background */
+  --color-white: #fbfdfc;
+  --font-main: "Inter", sans-serif;
+  --max-width: 960px;
+}
+
+body {
+  font-family: var(--font-main);
+  color: var(--color-dark);
+  line-height: 1.6;
+  background-color: #fbfdfc;
+}
+
+/* --- Navigation --- */
+.navbar {
+  width: 100%;
+  padding: 1.5rem 0;
+}
+
+.nav-container {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0 1.5rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  font-weight: 700;
+  font-size: 1.25rem;
+  color: #4a5568; /* Slate gray */
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.logo-icon {
+  color: #5a67d8; /* Slight purple/blue tint on the logo icon */
+}
+
+.navbar nav a {
+  text-decoration: none;
+  color: var(--color-dark-text);
+  font-weight: 600;
+  margin-left: 2rem;
+  font-size: 0.95rem;
+}
+
+/* --- Layout Container --- */
+.container {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
+/* --- Typography Section --- */
+.hero {
+  margin-top: 4rem;
+  margin-bottom: 3rem;
+}
+
+h1 {
+  font-size: 4.5rem; /* Massive size */
+  font-weight: 800;
+  line-height: 1; /* Tight spacing */
+  color: #4a5568; /* Dark Grey */
+  margin-bottom: 2.5rem;
+  letter-spacing: -0.02em;
+  text-align: center;
+}
+
+.highlight {
+  color: var(--color-teal);
+  display: block; /* Forces "Bouldering" to its own line visually if needed */
+}
+
+.intro h2 {
+  color: var(--color-teal);
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+}
+.intro p {
+  color: var(--color-light-text);
+  font-size: 1.125rem;
+  max-width: 100%;
+  line-height: 1.7;
+}
+
+/* --- Content Grid --- */
+.content-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr; /* Split 50/50 */
+  gap: 3rem;
+  margin-bottom: 4rem;
+  align-items: flex-start; /* Aligns tops of both columns */
+}
+
+/* The Blue Card */
+.info-card {
+  position: relative;
+  /* Use a real image or a placeholder that looks like the climbing wall */
+  background-image: url("https://images.unsplash.com/photo-1564769662533-4f00a87b4056?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80");
+  background-size: cover;
+  background-position: center;
+  border-radius: 4px;
+  overflow: hidden; /* Ensures child elements don't spill out */
+  height: 100%;
+  min-height: 320px;
+  display: flex;
+  align-items: flex-end; /* Pushes text to bottom */
+}
+
+/* Overlay to darken the image so text is readable */
+.info-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  /* Gradient from transparent to dark blue */
+  background: linear-gradient(
+    to bottom,
+    rgba(30, 60, 114, 0.3),
+    rgba(10, 25, 60, 0.9)
+  );
+}
+
+.card-content {
+  position: relative; /* Stacks above the overlay */
+  padding: 2rem;
+  color: white;
+  z-index: 1;
+}
+
+.card-content h3 {
+  font-size: 1.5rem;
+  margin-bottom: 0.75rem;
+  font-weight: 700;
+}
+
+.card-content p {
+  font-size: 1rem;
+  line-height: 1.5;
+  opacity: 0.95;
+}
+
+/* The List */
+.steps-list {
+  padding-top: 1rem; /* Align visually with card top */
+}
+
+.steps-list h3 {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #1a202c;
+  margin-bottom: 1.5rem;
+}
+
+steps-list ol {
+  list-style: none; /* Remove default numbers to style them custom if needed */
+  counter-reset: steps-counter;
+}
+
+.steps-list li {
+  position: relative;
+  padding-left: 2rem;
+  margin-bottom: 0.75rem;
+  color: var(--color-light-text);
+  font-size: 1.1rem;
+  line-height: 1.6;
+}
+
+/* --- Feature Image --- */
+.feature-image img {
+  width: 100%;
+  height: 300px; /* Fixed height for that panorama look */
+  object-fit: cover; /* Crops image nicely */
+  display: block;
+  margin-bottom: 4rem;
+  border-radius: 2px;
+}
+
+/* --- Footer --- */
+footer {
+  width: 100%; /* Full width of browser */
+  background-color: var(--color-teal-dark);
+  color: white;
+  padding: 2.5rem 0; /* Vertical padding */
+}
+
+footer p {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.footer-content {
+}
+
+/* --- Mobile Responsiveness --- */
+@media (max-width: 768px) {
+  h1 {
+    font-size: 3rem;
+  }
+
+  .content-grid {
+    grid-template-columns: 1fr; /* Stack columns */
+    gap: 2rem;
+  }
+
+  .feature-image img {
+    height: auto; /* Let image scale naturally on mobile */
+  }
 }

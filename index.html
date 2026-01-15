@@ -1,68 +1,78 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>A Blog about Boldering</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;700&family=Young+Serif&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap"
       rel="stylesheet"
     />
-    <title>Boldering Page</title>
-    <link rel="stylesheet" href="/style.css">
-</head>
-<body>
-    <main>
-        <article class="boldering-article">
-            <nav class="nav-bar">
-                <img src="/assets/logo.svg" alt="Boldering logo">
-                 <a href="">Home</a>
-                 <a href="">Getting Started</a>
-            </nav>  
-            
-              <header>
-                  <h1>Getting Started with Boldering</h1>
-              </header>
-             <section class="getting-started-section">
-                   <h2>
-                    How to get Started
-                   </h2>
-                   <p>
-                    Unlike many outdoor sports, getting started with bouldering is surprisingly simple. All you need are some climbing shoes, chalk, and a positive attitude—most gyms even rent the equipment for your first sessions.
-                    No prior experience or complex gear required!
-                   </p>
-             </section>
+  </head>
+  <body>
+    <header class="navbar">
+      <div class="nav-container">
+        <div class="logo">
+          <img src="/assets/logo.svg" alt="Boldering Page Logo" />
+        </div>
 
-             <section>
-                <h3>
-                   Know Before You Go
-                </h3>
-                <p>
-                   Before you start climbing, learn proper falling technique and always check your landing zone. Taking basic safety precautions and learning gym etiquette will help ensure a fun and injury-free experience.
-                </p>
+      <nav>
+        <a href="#">Home</a>
+        <a href="#" class="active">Getting Started</a>
+      </nav>
+       </div>
+    </header>
 
-                <div>
-                    <h3>
-                        The simple steps to getting started
-                    </h3>
-                    <ol>
-                        <li>Find a local bouldering gym.</li>
-                        <li>Rent or buy climbing shoes and chalk.</li>
-                        <li>Learn basic climbing and falling techniques.</li>
-                        <li>Start with easy routes to build confidence.</li>
-                        <li>Have fun and challenge yourself!</li>
-                    </ol>
-                </div>
-             </section>
+    <main class="container">
+      <section class="hero">
+            <h1>Getting started <br>with <span class="highlight">Bouldering</span></h1>
+        <div class="intro">
+          <h2>How to get started</h2>
+          <p>
+            Unlike many outdoor sports, getting started with bouldering is
+            surprisingly simple. All you need are some climbing shoes, chalk,
+            and a positive attitude—most gyms even rent the equipment for your
+            first sessions.
+            <strong>No prior experience or complex gear required!</strong>
+          </p>
+        </div>
+      </section>
 
-             <section>
-                <img src="/assets/getting-started-outdoors.jpg" alt="A man climbing a bolder outdoors">
-             </section>
+      <section class="content-grid">
+        <div class="info-card">
+          <div class="card-content">
+            <h3>Know Before You Go</h3>
+            <p>
+              Before you start climbing, learn proper falling technique and
+              always check your landing zone. Taking basic safety precautions
+              and learning gym etiquette will help ensure a fun and injury-free
+              experience.
+            </p>
+          </div>
+        </div>
 
-             <footer>
-                 <p>©2025 Boulder inc. All rights reserved.</p>
-             </footer>
-        </article>
+        <div class="steps-list">
+          <h3>The simple steps to getting started.</h3>
+          <ol>
+            <li>Find a bouldering gym near you.</li>
+            <li>Rent or invest in a pair of climbing shoes.</li>
+            <li>Learn basic bouldering techniques.</li>
+            <li>Start with easy routes and gradually increase difficulty.</li>
+            <li>Join a bouldering community or club.</li>
+          </ol>
+        </div>
+      </section>
+
+      <section class="feature-image">
+        <img src="assets/getting-started-outdoors.jpg" alt="alt="A climber bouldering outdoors on a rock face" />
+      </section>
+
+      <footer class="footer-content">
+        <p>&copy;2025 Boulder inc. All rights reserved.</p>
+      </footer>
     </main>
-</body>
+  </body>
 </html>
